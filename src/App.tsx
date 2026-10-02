@@ -39,6 +39,9 @@ function QuizExperience() {
   const speechConstructor = typeof window !== 'undefined'
     ? window.SpeechRecognition ?? window.webkitSpeechRecognition
     : undefined
+  const trueClueCount = quizConfig.clues.filter((clue) => !clue.isMisleading).length
+  const hasPlaceholderContent = quizConfig.clues.some((clue) => clue.text.includes('PLATZHALTER'))
+    || quizConfig.success.message.includes('PLATZHALTER')
 
   useEffect(() => () => recognitionRef.current?.stop(), [])
 
@@ -147,13 +150,15 @@ function QuizExperience() {
       <section className="quiz-intro" aria-labelledby="quiz-title">
         <p className="eyebrow">Wer bin ich?</p>
         <h1 id="quiz-title">Welchen Verein suchen wir?</h1>
-        <p>Fünf Hinweise stimmen. Einer will dich auf die falsche Fährte locken.</p>
+        <p>{trueClueCount} Hinweise stimmen. Einer will dich auf die falsche Fährte locken.</p>
       </section>
 
-      <aside className="placeholder-notice" role="note">
-        <strong>Inhalte in Vorbereitung</strong>
-        <span>Diese Hinweistexte sind Platzhalter und werden vor dem Geburtstag ersetzt.</span>
-      </aside>
+      {hasPlaceholderContent && (
+        <aside className="placeholder-notice" role="note">
+          <strong>Inhalte in Vorbereitung</strong>
+          <span>Diese Hinweistexte sind Platzhalter und werden vor dem Geburtstag ersetzt.</span>
+        </aside>
+      )}
 
       <ol className="clue-grid" aria-label="Hinweise zum gesuchten Verein">
         {quizConfig.clues.map((clue, index) => (

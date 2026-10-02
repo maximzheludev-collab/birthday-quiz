@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import App from './App'
+import { quizConfig } from './config'
 
 describe('birthday quiz flow', () => {
   it('moves from welcome to the clue board', async () => {
@@ -12,7 +13,7 @@ describe('birthday quiz flow', () => {
     await user.click(screen.getByRole('button', { name: /Quiz starten/ }))
 
     expect(screen.getByRole('heading', { name: 'Welchen Verein suchen wir?' })).toBeInTheDocument()
-    expect(screen.getAllByRole('listitem')).toHaveLength(6)
+    expect(screen.getAllByRole('listitem')).toHaveLength(quizConfig.clues.length)
   })
 
   it('encourages a wrong answer and allows a retry', async () => {

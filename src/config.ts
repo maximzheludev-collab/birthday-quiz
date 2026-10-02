@@ -22,7 +22,7 @@ export const quizConfig: QuizConfig = {
   intro: {
     eyebrow: 'Dein Geburtstags-Spezial',
     title: 'Bereit für die Fußball-Challenge?',
-    text: 'Sechs Hinweise. Einer davon führt dich absichtlich aufs Glatteis. Welchen Verein suchen wir?',
+    text: 'Fünf Hinweise. Einer davon führt dich absichtlich aufs Glatteis. Welchen Verein suchen wir?',
   },
   clues: [
     { text: 'Wir waren bereits im Stadion dieses Vereins.', isMisleading: false },
@@ -51,11 +51,11 @@ export const quizConfig: QuizConfig = {
   success: {
     eyebrow: 'Volltreffer!',
     title: 'Richtig geraten, Philipp!',
-    message: 'Alles Gute zum Geburtstag, Philipp!
+    message: `Alles Gute zum Geburtstag, Philipp!
 Wir wünschen dir einen großartigen Geburtstag, viel Glück, Gesundheit und viele schöne Fußballmomente im neuen Lebensjahr.
 
 Und weil eine richtige Antwort ohne Preis nur halb so spannend wäre:
 
-Dein Preis wartet im Schrank neben dem TV auf dich.',
+Dein Preis wartet im Schrank neben dem TV auf dich.`,
   },
 }
