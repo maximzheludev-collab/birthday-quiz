@@ -148,7 +148,6 @@ function QuizExperience() {
       </header>
 
       <section className="quiz-intro" aria-labelledby="quiz-title">
-        <p className="eyebrow">Wer bin ich?</p>
         <h1 id="quiz-title">Welchen Verein suchen wir?</h1>
         <p>{trueClueCount} Hinweise stimmen. Einer will dich auf die falsche Fährte locken.</p>
       </section>
