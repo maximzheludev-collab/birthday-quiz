@@ -39,5 +39,7 @@ describe('birthday quiz flow', () => {
 
     expect(screen.getByRole('heading', { name: 'Richtig geraten, Philipp!' })).toBeInTheDocument()
     expect(screen.getByText('Udinese Calcio')).toBeInTheDocument()
+    expect(screen.getByText('🎁 Was glaubst du, wartet auf dich?')).toBeInTheDocument()
+    expect(screen.getByText('Die Auflösung findest du im Schrank neben dem TV.')).toBeInTheDocument()
   })
 })

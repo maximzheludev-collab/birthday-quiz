@@ -51,11 +51,18 @@ export const quizConfig: QuizConfig = {
   success: {
     eyebrow: 'Volltreffer!',
     title: 'Richtig geraten, Philipp!',
-    message: `Alles Gute zum Geburtstag, Philipp!
+    message: `**Alles Gute zum Geburtstag, Philipp!**
 Wir wünschen dir einen großartigen Geburtstag, viel Glück, Gesundheit und viele schöne Fußballmomente im neuen Lebensjahr.
 
 Und weil eine richtige Antwort ohne Preis nur halb so spannend wäre:
+**🎁 Was glaubst du, wartet auf dich?**
 
-Dein Preis wartet im Schrank neben dem TV auf dich.`,
+**A)** Ein aktueller Udinese-Calcio-Schal
+**B)** Ein Fußball aus der Europa-League-Saison 2011/12
+**C)** Ein Udinese-T-Shirt aus dem Jahr **2011**
+**D)** Ein Trikot des FC Barcelona
+**E)** Eine Flasche Wein aus dem Friaul
+
+**Die Auflösung findest du im Schrank neben dem TV.**`,
   },
 }

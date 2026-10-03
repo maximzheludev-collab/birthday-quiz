@@ -277,10 +277,20 @@ h1 {
 
 .success-card { text-align: center; }
 .success-card h1 { max-width: none; }
-.success-card .lead { margin-inline: auto; }
 .success-icon { display: grid; width: 62px; height: 62px; margin: 0 auto 24px; place-items: center; border-radius: 50%; background: var(--lime); font-size: 2rem; font-weight: 800; }
 .club-reveal { margin: 22px 0; font: 800 clamp(1.4rem, 5vw, 2.2rem)/1.1 'Manrope', sans-serif; color: var(--green); }
-.birthday-line { margin: 30px 0 26px; font-weight: 800; }
+.success-message {
+  max-width: 540px;
+  margin: 28px auto 30px;
+  padding: clamp(20px, 4vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #faf8f2;
+  text-align: left;
+}
+.success-message p { margin: 0; line-height: 1.55; }
+.success-message strong { font-weight: 800; }
+.success-message .message-gap { display: block; height: 16px; }
 
 .confetti { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
 .confetti i {

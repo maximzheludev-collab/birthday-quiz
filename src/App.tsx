@@ -28,6 +28,23 @@ const Confetti = () => (
   </div>
 )
 
+const RichMessage = ({ text }: { text: string }) => (
+  <div className="success-message">
+    {text.split('\n').map((line, lineIndex) => {
+      if (!line) return <span className="message-gap" key={`gap-${lineIndex}`} aria-hidden="true" />
+
+      const parts = line.split(/(\*\*.*?\*\*)/g).filter(Boolean)
+      return (
+        <p key={`${lineIndex}-${line}`}>
+          {parts.map((part, partIndex) => part.startsWith('**') && part.endsWith('**')
+            ? <strong key={partIndex}>{part.slice(2, -2)}</strong>
+            : part)}
+        </p>
+      )
+    })}
+  </div>
+)
+
 function QuizExperience() {
   const [screen, setScreen] = useState<QuizScreen>('welcome')
   const [guess, setGuess] = useState('')
@@ -126,8 +143,7 @@ function QuizExperience() {
           <p className="eyebrow">{quizConfig.success.eyebrow}</p>
           <h1 id="success-title">{quizConfig.success.title}</h1>
           <p className="club-reveal">{quizConfig.answer.canonical}</p>
-          <p className="lead">{quizConfig.success.message}</p>
-          <p className="birthday-line">Alles Gute zum {quizConfig.player.age}. Geburtstag! <span aria-hidden="true">🎉</span></p>
+          <RichMessage text={quizConfig.success.message} />
           <button className="secondary-button" onClick={() => {
             setScreen('welcome')
             setGuess('')
